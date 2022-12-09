@@ -1,0 +1,8 @@
+2022-08-31 22:23:27.719 CEST [155918] LOG:  listening on IPv6 address "::1", port 5432
+2022-08-31 22:23:27.719 CEST [155918] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-08-31 22:23:27.720 CEST [155918] FATAL:  could not create lock file "/var/run/postgresql/.s.PGSQL.5432.lock": Permission denied
+2022-08-31 22:23:27.720 CEST [155918] LOG:  database system is shut down
+2022-08-31 22:24:29.125 CEST [155981] LOG:  listening on IPv6 address "::1", port 5432
+2022-08-31 22:24:29.126 CEST [155981] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2022-08-31 22:24:29.127 CEST [155981] FATAL:  could not create lock file "/var/run/postgresql/.s.PGSQL.5432.lock": Permission denied
+2022-08-31 22:24:29.127 CEST [155981] LOG:  database system is shut down
