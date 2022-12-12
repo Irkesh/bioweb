@@ -5,5 +5,58 @@
         <meta name="description" content="Toy Gene data website">
         <meta name="keywords" content="HTML,gene,genes,advanced,web,development">
         <meta name="author" content="D.Buchan">
+        <link rel="stylesheet" type="text/css" href="../static/css/genedata.css">
+        <script> 
+        function exampleFunction(){
+          var x, y, z
+          x = 5;
+          y = 6.6;
+          z = "hello";
+          //alert(x);
+          console.log(z);
+          var test_array = [1, 2, 3];
+          var test_hash = {"one": 1, "two": "this"}
+          while(true) {
+            console.log("I am in the loop");
+            break;
+          };
+          for(i = 0; i < test_array.length; i++){
+             console.log("array out : "+test_array[i]);
+          }
+          if(test_array.length == 3)
+          {
+            console.log("array is the right length");
+          }
+          //ususally this is used instead of while or for loop
+          test_array.forEach(function(element){
+            console.log("For each Output:  "+element);
+          });
+        }
+        // let our function come as a respond to user event
+        //exampleFunction();  
+
+        function changePage(){
+            console.log("Changing Page");
+            //we getting a reference to every h1 element on the page
+            //it will give us a javascript array: list of h1 elements
+            var h1_elements = document.querySelectorAll("h1");
+            var list_panel = document.getElementById("gene_list"); //<div id ="gene_list" > in base.html
+            console.log(list_panel.innerHTML);
+            //list_panel.innerHTML = "<h2> Oooops, They are gone </h2>";
+            //console.log(list_panel.innerHTML);
+
+            //change color of navigation links
+            var nav_links = document.getElementsByClassName('nav_link');
+            for (var i = 0; nav_links.length; i++){
+                nav_links[i].style.color = "black";
+            }
+            //change all h1 elements to have different text
+            for(h in h1_elements){
+              h1_elements[h].innerHTML = "Organism Name: D. Buchecria";
+          }
+        };
+
+        </script>
+
     </head>
     <body>
