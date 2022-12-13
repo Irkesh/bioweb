@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost',
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap4',
     'genedata.apps.GenedataConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -124,6 +125,6 @@ USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+# https://docs.djangoproject.com/en/3.0/howto/static-files/psql -c "SELECT version();"
 
 STATIC_URL = '/static/'

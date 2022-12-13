@@ -1,8 +1,11 @@
 {% include "./header.html" %}
 {% include "./title.html" %}
 
+
+<div class="container-fluid">
+  <div class="row">
 {% block geneList %}
-<div id ="gene_list" >
+<div class="col-sm-4" id ="gene_list" >
     <h1>D.Bucheria Genes</h1>
     <table>
       <tr><th>Gene ID</th></tr>
@@ -13,8 +16,10 @@
 </div>   
 {%endblock %}
 
-<div class="content">
+<div class="col-sm-8" class="content">
     {% block content %} Didn't render content {% endblock %}
 </div>
 
 {% include "./footer.html" %}
+  </div>
+</div>
