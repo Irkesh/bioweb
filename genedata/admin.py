@@ -21,12 +21,11 @@ class ECAdmin(admin.ModelAdmin):
 class SequencingAdmin(admin.ModelAdmin):
     list_display = ('sequencing_factory', 'factory_location')
 
-class ProductAdmin(models.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display=('type', 'product')
 
-class AttributeAdmin(models.ModelAdmin):
+class AttributeAdmin(admin.ModelAdmin):
      list_display=('key', 'value')
-
 
 
 
