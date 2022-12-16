@@ -5,7 +5,7 @@ import csv
 from collections import defaultdict
 
 # sys.path.append("/home/coder/project/topic2/bioweb")
-sys.path.append("/home/dbuchan/Course_Dev/docker_containers/adv_web_dev_topic_3_docker/files/topic2/bioweb")
+sys.path.append("/home/irina/Project//bioweb")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                       'bioweb.settings')
 django.setup()
@@ -13,7 +13,7 @@ django.setup()
 from genedata.models import *
 
 # data_file = '/home/coder/project/topic2/scripts/example_data_to_load.csv'
-data_file = '/home/dbuchan/Course_Dev/docker_containers/adv_web_dev_topic_3_docker/files/topic2/example_data_to_load.csv'
+data_file = '/home/irina/Project/topic2/example_data_to_load.csv'
 genes = defaultdict(list)
 sequencing = set()
 ec = set()

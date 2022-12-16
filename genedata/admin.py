@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import *
 
+#here we difine which tables are going to be shown in admin interface
+#we do it by declaring classes for each administrative interface:
 
 class GeneAttributeLinkInline(admin.TabularInline):
     model = GeneAttributeLink
@@ -19,7 +21,17 @@ class ECAdmin(admin.ModelAdmin):
 class SequencingAdmin(admin.ModelAdmin):
     list_display = ('sequencing_factory', 'factory_location')
 
+class ProductAdmin(models.ModelAdmin):
+    list_display=('type', 'product')
+
+class AttributeAdmin(models.ModelAdmin):
+     list_display=('key', 'value')
+
+
+
 
 admin.site.register(Gene, GeneAdmin)
 admin.site.register(EC, ECAdmin)
 admin.site.register(Sequencing, SequencingAdmin)
+admin.site.register(Product, ProductAdmin)
+admin.site.register(Attribute, AttributeAdmin)
