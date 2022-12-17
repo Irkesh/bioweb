@@ -13,7 +13,7 @@ def gene(request, pk):
     gene = Gene.objects.get(pk=pk)
     gene.access += 1
     print("Gene record:", pk, "access count:", str(gene.access))
-    gene.save()
+    gene.save() # save gene here-equvivalent to updating database row
     master_genes = Gene.objects.all()
     return render(request, 'genedata/gene.html', {'gene': gene, 'master_genes': master_genes})
 
@@ -33,7 +33,7 @@ def poslist(request):
 def delete(request, pk):
     GeneAttributeLink.objects.filter(gene_id=pk).delete()
     Gene.objects.filter(pk=pk).delete()
-    return HttpResponseRedirect("/test")
+    return HttpResponseRedirect("/")
 
 def create_ec(request):
     master_genes = Gene.objects.all()
@@ -59,14 +59,17 @@ def create_ec(request):
 
 
 def create_gene(request):
+    master_genes = Gene.objects.all()
     if request.method == 'POST':
         #creating form using model form
         form = GeneForm(request.POST)        
         if form.is_valid():
             gene = form.save()
             return HttpResponseRedirect('/create_gene/')
+        else:
+            return render(request, 'genedata/create_gene.html', {'error':"failed", 'master_genes': master_genes, 'form': form})
         
     else:
-        master_genes = Gene.objects.all()
+        
         form = GeneForm()
     return render(request, 'genedata/create_gene.html', {'form': form, 'master_genes': master_genes})
