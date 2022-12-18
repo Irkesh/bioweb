@@ -28,7 +28,6 @@ class AttributeAdmin(admin.ModelAdmin):
      list_display=('key', 'value')
 
 
-
 admin.site.register(Gene, GeneAdmin)
 admin.site.register(EC, ECAdmin)
 admin.site.register(Sequencing, SequencingAdmin)

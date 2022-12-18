@@ -52,5 +52,5 @@ class Attribute(models.Model):
 
 
 class GeneAttributeLink(models.Model):
-    gene = models.ForeignKey(Gene, on_delete=models.DO_NOTHING)
+    gene = models.ForeignKey(Gene, on_delete=models.CASCADE)
     attribute = models.ForeignKey(Attribute, on_delete=models.DO_NOTHING)
