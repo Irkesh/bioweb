@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['localhost',
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'bootstrap4',
     'genedata.apps.GenedataConfig',
     'django.contrib.admin',
@@ -44,6 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+#Django rest framework gives us a way to respond to HTTP requests, and request methods in a manner that's consistent with the REST principles 
+#provides us with a framework that allows us to easily package data into JSON or XML formats
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

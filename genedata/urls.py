@@ -1,5 +1,6 @@
 from django.urls import include, path
 from . import views
+from . import api
 
 urlpatterns = [
     path('', views.GeneList.as_view(), name='index'),
@@ -10,4 +11,6 @@ urlpatterns = [
     path('create_ec/', views.create_ec, name='create'),
     path('create_gene/', views.GeneCreate.as_view(), name='create_gene'),
     path('update/<int:pk>', views.GeneUpdate.as_view(), name='update'),
+    path('api/gene/<int:pk>', api.gene_detail),
+    path('api/genes_list/', api.genes_list),
 ]
