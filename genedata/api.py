@@ -3,6 +3,9 @@ from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import generics
+from rest_framework import mixins
+
 
 from .models import *
 from .serializers import *
@@ -35,6 +38,7 @@ def gene_detail(request, pk):
 
 
 
+
 @api_view(['GET'])
 def genes_list(request):
     try:
@@ -46,6 +50,33 @@ def genes_list(request):
         serializer = GeneListSerializer(gene, many=True)
         return Response(serializer.data)
 
+
+# rewriting @api_view def genes_list(request): with one of the generics classes from rest_framework
+
+class GeneList(generics.ListAPIView):
+    queryset = Gene.objects.all()
+    serializer_class = GeneListSerializer
+
+
+class GeneDetails(mixins.CreateModelMixin,
+                 mixins.RetrieveModelMixin,
+                 mixins.UpdateModelMixin,
+                 mixins.DestroyModelMixin,
+                 generics.GenericAPIView):
+    queryset = Gene.objects.all()
+    serializer_class = GeneSerializer
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
 
 
 
