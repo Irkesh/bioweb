@@ -9,6 +9,11 @@ from .models import *
 from .forms import *
 
 
+
+def SPA(request):
+ return render(request, 'genedata/SPA.html')
+
+
 class GeneList(ListView):
     model = Gene
     context_object_name = 'master_genes'    

@@ -15,4 +15,5 @@ urlpatterns = [
     path('api/genes_list/', api.genes_list),
     path('api/ge_ne/<int:pk>', api.GeneDetails.as_view(), name = 'gene_api'),
     path('api/genes', views.GeneList.as_view(), name = 'genes_api'),
+    path('app/', views.SPA, name='spa'),
 ]

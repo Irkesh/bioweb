@@ -1,0 +1,58 @@
+<!-- (built from header, title, base, footer) -->
+{% load bootstrap4 %}
+{% load my_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Toy Gene data website">
+        <meta name="keywords" content="HTML,gene,genes,advanced,web,development">
+        <meta name="author" content="D.Buchan">
+        {% bootstrap_css %}
+        {% bootstrap_javascript jquery='full' %}
+        <!-- we keep our stylesheets loading last -->
+        <link rel="stylesheet" type="text/css" href="../static/css/genedata.css">
+        <script scr="../static/js/spa.js"></script>
+    </head>
+<body>
+
+        <nav class="navbar navbar-expand-md sticky-top flex-column">
+            <div class="w-100 d-flex">
+                <div class="navbar-header" id="header">
+                    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/202002_Laboratory_instrument_dna.svg" alt="dna logo" width="50px" height="50px">
+                    <h1 id="application_title">Gene Browser</h2>
+                </div>
+            </div>
+            <div class="w-100 d-flex">            
+                <ul  class="navbar-nav mr-auto" id="navigation">
+                    <li class="nav-item active"><a class="nav_link" href="/">Home&nbsp; </a></li>
+                    <li class="nav-item active"><a class="nav_link" href="https://www.ebi.ac.uk/">EBI&nbsp; </a></li>
+                    <li class="nav-item active"><a class="nav_link" href="https://www.uniprot.org/">Uniprot&nbsp; </a></li>
+                </ul>
+            </div>
+        </nav>
+   
+<div class="container-fluid">
+    <div class="row">
+    
+    <div class="col-sm-4" id ="gene_list" >
+        <h1>D.Bucheria Genes</h1>
+        <div id = "gene_table"> NO TABLE</div>
+    </div>       
+    <div class="col-sm-8" class="content">   
+        <div id = "dynamic_content"> NO CONTENT</div>     
+    </div>  
+  </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        <!-- footer straches across the whole page-->
+        <div class="col-md-12" id="footer">
+        <hr>
+        <p>Author: D. Buchan. Date: {% todays_date %}.</p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
