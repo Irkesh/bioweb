@@ -1,4 +1,5 @@
 <!-- (built from header, title, base, footer) -->
+
 {% load bootstrap4 %}
 {% load my_tags %}
 
@@ -13,10 +14,12 @@
         {% bootstrap_javascript jquery='full' %}
         <!-- we keep our stylesheets loading last -->
         <link rel="stylesheet" type="text/css" href="../static/css/genedata.css">
-        <script scr="../static/js/spa.js"></script>
+        <link rel="text/javascript" type="text/javascript" href="../static/js/spa.js">
+        <link rel="shortcut icon" href="#">
+        <script src="../static/js/spa.js"> </script>
     </head>
-<body>
-
+<!-- javascript even handler onload - laod this chunck of Javascript when the page is finished loading-->
+<body onload="initialisePage()">
         <nav class="navbar navbar-expand-md sticky-top flex-column">
             <div class="w-100 d-flex">
                 <div class="navbar-header" id="header">
@@ -26,33 +29,31 @@
             </div>
             <div class="w-100 d-flex">            
                 <ul  class="navbar-nav mr-auto" id="navigation">
-                    <li class="nav-item active"><a class="nav_link" href="/">Home&nbsp; </a></li>
+                    <li class="nav-item active"><a class="nav-link" href="javascript:void(0);" onClick="writeInitialContent()">Home</a></li>
                     <li class="nav-item active"><a class="nav_link" href="https://www.ebi.ac.uk/">EBI&nbsp; </a></li>
                     <li class="nav-item active"><a class="nav_link" href="https://www.uniprot.org/">Uniprot&nbsp; </a></li>
                 </ul>
             </div>
-        </nav>
-   
-<div class="container-fluid">
-    <div class="row">
-    
-    <div class="col-sm-4" id ="gene_list" >
-        <h1>D.Bucheria Genes</h1>
-        <div id = "gene_table"> NO TABLE</div>
-    </div>       
-    <div class="col-sm-8" class="content">   
-        <div id = "dynamic_content"> NO CONTENT</div>     
-    </div>  
-  </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-        <!-- footer straches across the whole page-->
-        <div class="col-md-12" id="footer">
-        <hr>
-        <p>Author: D. Buchan. Date: {% todays_date %}.</p>
+        </nav>   
+    <div class="container-fluid">
+        <div class="row">        
+            <div class="col-sm-4" id ="gene_list" >
+                <h1>D.Bucheria Genes</h1>
+                <div id = "gene_table"> NO TABLE</div>
+            </div>       
+            <div class="col-sm-8" class="content">   
+                <div id = "dynamic_content"> NO CONTENT</div>     
+            </div>  
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- footer straches across the whole page-->
+            <div class="col-md-12" id="footer">
+            <hr>
+            <p>Author: D. Buchan. Date: {% todays_date %}.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
